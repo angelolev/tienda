@@ -1,0 +1,24 @@
+.header {
+  &__image {
+    background-image: url("https://pency.app/api/image/production.pency.images/lolu.medias/1647630157582.jpg");
+    height: 20rem;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__brand {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__logo {
+    background-image: url('https://pency.app/api/image/production.pency.images/venusshop07/1635307604089.jpg');
+    background-position: center;
+    background-size: cover;
+    min-height: 8rem;
+    width: 8rem;
+  }
+}

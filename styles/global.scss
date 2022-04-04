@@ -1,0 +1,40 @@
+body {
+  background-color: rgb(250, 250, 250);
+  font-family: 'Lato', sans-serif;
+  position: relative;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+main {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.products {
+  display: grid;
+  grid-gap: 6rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.cart-button {
+  position: absolute;
+  right: 50px;
+  bottom: 0
+}
+
+.btn {
+  border:none;
+  background-color: #9b59b6;
+  color: #fff;
+  padding: 1rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 300ms;
+
+  &:hover {
+      background-color: #8e44ad;
+  }
+}

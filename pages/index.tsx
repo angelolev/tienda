@@ -1,23 +1,21 @@
 import { GetStaticProps } from "next";
 import React, { useMemo, useState } from "react";
+import Header from "../components/Header";
 import api from "../product/api";
 import Link from "next/link";
-
+import ProductCard from "../components/Product";
 import { Product } from "../product/types";
 
 interface Props {
   products: Product[];
 }
 
-const parseCurrency = (value: number): string => {
-  return value.toLocaleString("es-PE", {
-    style: "currency",
-    currency: "PEN",
-  });
-};
-
 const Component: React.FC<Props> = ({ products }) => {
   const [cart, setCart] = useState<Product[]>([]);
+
+  const handleProductClick = (product) => {
+    setCart((cart) => cart.concat(product));
+  };
 
   const text = useMemo(() => {
     return cart
@@ -37,26 +35,26 @@ const Component: React.FC<Props> = ({ products }) => {
 
   return (
     <>
-      <div>
+      <Header />
+      <section className="products">
         {products.map((product: Product) => (
-          <div key={product.id}>
-            <p>{product.title}</p>
-            <p>{parseCurrency(product.price)}</p>
-            <button onClick={() => setCart((cart) => cart.concat(product))}>
-              Agregar
-            </button>
-          </div>
+          <ProductCard
+            {...product}
+            product={product}
+            key={product.id}
+            onProductClick={handleProductClick}
+          />
         ))}
-      </div>
-      <div>
-        {cart.length && (
+      </section>
+      {cart.length > 0 && (
+        <div className="cart-button">
           <Link
-            href={`https://wa.me/51952719641?text=${encodeURIComponent(text)}`}
+            href={`https://wa.me/51952719643?text=${encodeURIComponent(text)}`}
           >
-            <button>Ver carrito ({cart.length})</button>
+            <button className="btn">Ver carrito ({cart.length})</button>
           </Link>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 };
