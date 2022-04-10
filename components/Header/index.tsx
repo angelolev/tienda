@@ -1,4 +1,7 @@
+import Image from "next/image";
 import React from "react";
+import instagram from "../../icons/instagram.svg";
+import whatsapp from "../../icons/whatsapp.svg";
 import styles from "./Header.module.scss";
 
 interface Props {}
@@ -18,8 +21,18 @@ const Header: React.FC<Props> = () => {
           </div>
         </div>
         <div className={styles.header__social}>
-          <div className={styles.header__icon}>Intagram</div>
-          <div className={styles.header__icon}>Whatsapp</div>
+          <div className={styles.header__icon}>
+            <Image
+              src={instagram}
+              alt="Instagram"
+              width={30}
+              height={30}
+              layout="intrinsic"
+            />
+          </div>
+          <div className={styles.header__icon}>
+            <Image src={whatsapp} alt="Whatsapp" width={30} height={30} />
+          </div>
         </div>
       </div>
     </header>

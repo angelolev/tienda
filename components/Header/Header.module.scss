@@ -7,6 +7,7 @@
   &__info {
     display: flex;
     justify-content: space-between;
+    padding: 0 20px 20px;
   }
 
   &__brand {
@@ -18,7 +19,31 @@
     background-image: url('https://pency.app/api/image/production.pency.images/venusshop07/1635307604089.jpg');
     background-position: center;
     background-size: cover;
+    background-color: rgb(237, 242, 247);
+    border-radius: 50%;
     min-height: 8rem;
+    padding: 15px;
+    position: relative;
+    top: -30px;
     width: 8rem;
+  }
+
+  &__title {
+    margin-left: 20px;
+  }
+
+  &__social {
+    display: flex;
+    padding-top: 10px;
+  }
+
+  &__icon {
+    margin-left: 5px;
+    img {
+      background-color: aquamarine;
+      border-radius: 50%;
+      padding: 5px !important;
+    }
+    
   }
 }
