@@ -1,6 +1,7 @@
 // pages/_document.js
 import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import Modal from "../components/Modal";
 
 class MyDocument extends Document {
   render() {
@@ -14,6 +15,7 @@ class MyDocument extends Document {
         </Head>
         <body>
           <Main />
+          <div id="myportal"></div>
           <NextScript />
         </body>
       </Html>
